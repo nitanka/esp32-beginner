@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "author": "Wokwi User",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-74hc595", "id": "shiftreg", "top": -80, "left": 0, "attrs": {} },
+    { "type": "wokwi-7segment", "id": "digit", "top": -80, "left": 150, "attrs": { "common": "cathode" } }
+  ],
+  "connections": [
+    [ "esp:23", "shiftreg:SER", "green", [ "v0" ] ],
+    [ "esp:18", "shiftreg:SRCLK", "blue", [ "v0" ] ],
+    [ "esp:5", "shiftreg:RCLK", "yellow", [ "v0" ] ],
+    [ "shiftreg:GND", "shiftreg:OE", "black", [ "v0" ] ],
+    [ "shiftreg:VCC", "shiftreg:MR", "red", [ "v0" ] ],
+    [ "esp:5V", "shiftreg:VCC", "red", [ "v0" ] ],
+    [ "esp:GND.1", "shiftreg:GND", "black", [ "v0" ] ],
+    [ "shiftreg:QA", "digit:A", "green", [ "v0" ] ],
+    [ "shiftreg:QB", "digit:B", "green", [ "v0" ] ],
+    [ "shiftreg:QC", "digit:C", "green", [ "v0" ] ],
+    [ "shiftreg:QD", "digit:D", "green", [ "v0" ] ],
+    [ "shiftreg:QE", "digit:E", "green", [ "v0" ] ],
+    [ "shiftreg:QF", "digit:F", "green", [ "v0" ] ],
+    [ "shiftreg:QG", "digit:G", "green", [ "v0" ] ],
+    [ "shiftreg:QH", "digit:DP", "green", [ "v0" ] ],
+    [ "esp:GND.2", "digit:COM", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
